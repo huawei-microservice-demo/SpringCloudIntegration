@@ -1,0 +1,22 @@
+cse-config-order: 100
+APPLICATION_ID: spring-cloud-app
+service_description:
+  name: spring-cloud-with-servicecomb-demo
+  version: 0.0.1
+cse:
+  service:
+    registry:
+      address: https://cse.cn-north-1.myhwclouds.com:443
+      instance:
+        watch: false
+  config:
+    client:
+      serverUri: https://cse.cn-north-1.myhwclouds.com:443
+      refreshMode: 1
+      refresh_interval: 15000
+  rest:
+    address: 0.0.0.0:9999
+  credentials:
+    accessKey: your access key in CSE
+    secretKey: your secret key in CSE
+    akskCustomCipher: default
