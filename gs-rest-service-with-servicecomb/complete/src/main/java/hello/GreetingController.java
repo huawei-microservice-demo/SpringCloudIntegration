@@ -24,10 +24,10 @@ public class GreetingController implements IGreetingController {
   @RequestMapping(value = "/greeting", method = RequestMethod.GET)
   public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
 //        String fault = DynamicPropertyFactory.getInstance().getStringProperty("spring.cloud.inject.fault", null).get();
-    if (fault != null) {
-      return new Greeting(counter.incrementAndGet(),
-          String.format(template, fault));
-    }
+//    if (fault != null) {
+//      return new Greeting(counter.incrementAndGet(),
+//          String.format(template, fault));
+//    }
     return new Greeting(counter.incrementAndGet(),
         String.format(template, name));
   }
