@@ -32,6 +32,10 @@
             <artifactId>spring-boot-starter-provider</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.huawei.paas.cse</groupId>
+            <artifactId>cse-solution-service-engine</artifactId>
+        </dependency>
+        <dependency>
         <groupId>com.huawei.paas.cse</groupId>
         <artifactId>foundation-config-cc</artifactId>
         </dependency>
