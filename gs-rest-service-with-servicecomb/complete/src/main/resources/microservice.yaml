@@ -17,6 +17,7 @@ cse:
   rest:
     address: 0.0.0.0:9999
   credentials:
-    accessKey: BUDCVWSAW04UZVLSZBQR
-    secretKey: BHixEctCJFbTkPUVUUjRDSeVwMAknlAy5oB7idgR
+    accessKey: Your access key in CSE
+    secretKey: Your secret key in CSE
     akskCustomCipher: default
+

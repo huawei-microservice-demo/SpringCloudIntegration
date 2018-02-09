@@ -1,17 +1,15 @@
 package hello;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.servicecomb.springboot.starter.discovery.ServiceCombServerList;
 import org.springframework.context.annotation.Bean;
 
 import com.netflix.client.config.IClientConfig;
+import com.netflix.loadbalancer.AvailabilityFilteringRule;
 import com.netflix.loadbalancer.IPing;
 import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.PingUrl;
-import com.netflix.loadbalancer.AvailabilityFilteringRule;
 import com.netflix.loadbalancer.Server;
 import com.netflix.loadbalancer.ServerList;
-
-import io.servicecomb.springboot.starter.discovery.ServiceCombServerList;
 
 public class SayHelloConfiguration {
   @Bean

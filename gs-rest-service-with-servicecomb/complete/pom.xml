@@ -19,7 +19,7 @@
             <dependency>
                 <groupId>com.huawei.paas.cse</groupId>
                 <artifactId>cse-dependency</artifactId>
-                <version>2.2.38</version>
+                <version>2.3.7</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -28,7 +28,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>io.servicecomb</groupId>
+            <groupId>org.apache.servicecomb</groupId>
             <artifactId>spring-boot-starter-provider</artifactId>
         </dependency>
         <dependency>
