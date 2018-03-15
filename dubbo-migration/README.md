@@ -1,7 +1,7 @@
 本项目演示了dubbo服务改造为CSE(ServiceComb-java-chassis)服务的主要过程。原始的dubbo DEMO来源于[dubbo官网](https://github.com/alibaba/dubbo/tree/master/dubbo-demo)。目录dubbo-demo是原始的DEMO，dubbo-demo-servicecomb是改造后的DEMO。
 
 # 如何熟悉改造过程
-1. 建议开发者首先从[dubbo官网](http://dubbo.io/)和[CSE官网](https://java.huaweicse.com/)初步了解两个框架的功能，下载入门指导并了解Provider和Consumer的运行过程。
+1. 建议开发者首先从[dubbo官网](http://dubbo.io/)和[CSE官网](https://java.huaweicse.com/)初步了解两个框架的功能，下载入门指导并了解Provider和Consumer的运行过程。[ServiceComb的开放性设计](https://bbs.huaweicloud.com/blogs/1fc9427c088611e89fc57ca23e93a89f)介绍了CSE的总体设计思路，可以帮助用户做好选型评估。
 2. 改造的主要内容，本质上是改变服务发布方式，开发者需要将使用dubbo发布的RPC接口，使用ServiceComb的RPC方式发布。主要的改造内容是针对服务（注：这里服务指一个进程对外提供的接口。不同的技术发布服务的方式不同。比如Tomcat是符合J2EE标准的容器，采用Servlet来发布服务。由于dubbo和ServiceComb都支持RPC，因此在服务层面的改造比其他技术之间的改造要小很多，当然具体的工作量还可能和开发者写代码的习惯和设计模式有关。），通常涉及到配置文件的修改、增加Annotation描述等，不涉及具体业务逻辑的改造。当然，不同的开发框架可能还提供了一些特定的API接口，这块是改造过程中最不可以预测的部分，也是改造过程中比较难的部分。好在这部分内容很少，对于ServiceComb，开发者多数情况下不会使用任何API接口。不使用框架API接口的好处是切换为其他框架的时候，改造工作量很小。
 3. 我们建议开发者安装Beyond Compare或者其他源码比较工具。了解下面的改造过程从使用比较工具打开dubbo-demo和dubbo-demo-servicecomb开始。
 
