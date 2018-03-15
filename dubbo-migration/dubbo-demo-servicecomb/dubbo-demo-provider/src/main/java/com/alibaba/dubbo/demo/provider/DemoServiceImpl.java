@@ -15,9 +15,9 @@
  */
 package com.alibaba.dubbo.demo.provider;
 
-import com.alibaba.dubbo.demo.DemoService;
+import org.apache.servicecomb.provider.pojo.RpcSchema;
 
-import io.servicecomb.provider.pojo.RpcSchema;
+import com.alibaba.dubbo.demo.DemoService;
 
 @RpcSchema(schemaId = "providerSchema")
 public class DemoServiceImpl implements DemoService {

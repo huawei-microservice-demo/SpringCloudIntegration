@@ -1,12 +1,11 @@
 package com.alibaba.dubbo.demo.consumer;
 
+import org.apache.servicecomb.foundation.common.utils.BeanUtils;
+import org.apache.servicecomb.foundation.common.utils.Log4jUtils;
+import org.apache.servicecomb.provider.pojo.RpcReference;
 import org.springframework.stereotype.Component;
 
 import com.alibaba.dubbo.demo.DemoService;
-
-import io.servicecomb.foundation.common.utils.BeanUtils;
-import io.servicecomb.foundation.common.utils.Log4jUtils;
-import io.servicecomb.provider.pojo.RpcReference;
 
 /**
  * Created by ken.lj on 2017/7/31.
