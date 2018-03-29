@@ -42,8 +42,8 @@ cse:
     address: 0.0.0.0:9093
 
   credentials:
-    accessKey: BUDCVWSAW04UZVLSZBQR
-    secretKey: BHixEctCJFbTkPUVUUjRDSeVwMAknlAy5oB7idgR
+    accessKey: your ak
+    secretKey: yours sk
     akskCustomCipher: default
 
 servicecomb:
