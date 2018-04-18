@@ -6,6 +6,7 @@ This project is created for checking the issue related to tomcat and servicecomb
    or
    define the mirror like below in maven settings.xml
 
+```xml
   <mirrors>
     <mirror>
       <id>mirrorId</id>
@@ -14,6 +15,7 @@ This project is created for checking the issue related to tomcat and servicecomb
       <url>http://maven.huaweicse.com/nexus/content/groups/public</url>
     </mirror>
  </mirrors>
+```
 
 2. mvn clean install
 it will generate the WAR file.
