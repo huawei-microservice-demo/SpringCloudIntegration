@@ -16,10 +16,18 @@
 
     <dependencyManagement>
         <dependencies>
+
+           <dependency>
+                <groupId>org.apache.servicecomb</groupId>
+                <artifactId>java-chassis-dependencies</artifactId>
+                <version>1.0.0-m2-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>com.huawei.paas.cse</groupId>
                 <artifactId>cse-dependency</artifactId>
-                <version>2.2.28</version>
+                <version>2.3.15</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -28,16 +36,16 @@
 
     <dependencies>
         <dependency>
-            <groupId>io.servicecomb</groupId>
+            <groupId>org.apache.servicecomb</groupId>
             <artifactId>spring-boot-starter-registry</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.servicecomb</groupId>
+            <groupId>org.apache.servicecomb</groupId>
             <artifactId>spring-boot-starter-configuration</artifactId>
         </dependency>
         <dependency>
-        <groupId>com.huawei.paas.cse</groupId>
-        <artifactId>foundation-config-cc</artifactId>
+        <groupId>org.apache.servicecomb</groupId>
+        <artifactId>config-cc</artifactId>
         </dependency>
         <dependency>
             <groupId>com.huawei.paas.cse</groupId>

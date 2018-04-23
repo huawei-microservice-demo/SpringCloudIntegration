@@ -11,20 +11,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GreetingController {
 
-    private static final String template = "Hello, %s!";
-    private final AtomicLong counter = new AtomicLong();
+  private static final String template = "Hello, %s!";
 
-    @Value(value="${spring.cloud.inject.fault:null}")
-    private String fault;
+  private final AtomicLong counter = new AtomicLong();
 
-    @RequestMapping("/greeting")
-    public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
-//        String fault = DynamicPropertyFactory.getInstance().getStringProperty("spring.cloud.inject.fault", null).get();
-        if(fault != null) {
-            return new Greeting(counter.incrementAndGet(),
-                String.format(template, fault));
-        }
-        return new Greeting(counter.incrementAndGet(),
-                            String.format(template, name));
+//  @Value(value = "${spring.cloud.inject.fault}")
+  private String fault;
+
+  @RequestMapping("/greeting")
+  public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
+    System.out.println(DynamicPropertyFactory.getInstance().getStringProperty("spring.cloud.inject.fault", null).get());
+    if (fault != null) {
+      return new Greeting(counter.incrementAndGet(),
+          String.format(template, fault));
     }
+    return new Greeting(counter.incrementAndGet(),
+        String.format(template, name));
+  }
 }

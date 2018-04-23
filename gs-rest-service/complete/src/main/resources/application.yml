@@ -1,7 +1,9 @@
-cse-config-order: 100
+server:
+  port: 9090
+### CSE configurations #########
 APPLICATION_ID: spring-cloud-app
 service_description:
-  name: say-hello
+  name: spring-cloud-demo
   version: 0.0.1
 cse:
   service:
@@ -15,8 +17,9 @@ cse:
       refreshMode: 1
       refresh_interval: 15000
   rest:
-    address: 0.0.0.0:8090
+    address: 0.0.0.0:9090
   credentials:
-    accessKey: your access key in CSE
-    secretKey: your secret key in CSE
+    accessKey: BUDCVWSAW04UZVLSZBQR
+    secretKey: BHixEctCJFbTkPUVUUjRDSeVwMAknlAy5oB7idgR
     akskCustomCipher: default
+### END OF CSE configurations #########
