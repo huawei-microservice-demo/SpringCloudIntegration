@@ -15,7 +15,7 @@ public class GreetingController {
 
   private final AtomicLong counter = new AtomicLong();
 
-//  @Value(value = "${spring.cloud.inject.fault}")
+  @Value(value = "${spring.cloud.inject.fault:null}")
   private String fault;
 
   @RequestMapping("/greeting")
