@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: helloprovider
+
+server:
+  port: 7111
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7071/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    metadataMap:
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
