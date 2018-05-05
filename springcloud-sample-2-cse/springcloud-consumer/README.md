@@ -3,60 +3,13 @@
 这里我们基于原始Spring Cloud应用，演示如何接入CSE
 详细文档可参考[Spring Cloud应用接入CSE](https://support.huaweicloud.com/bestpractice-cse/cse_03_0092.html)
 
-### 1.修改pom文件
-
-- 删除spring-cloud-starter-eureka和spring-cloud-starter-eureka-server依赖
-
-```xml
-<!--<dependency>-->
-	<!--<groupId>org.springframework.cloud</groupId>-->
-	<!--<artifactId>spring-cloud-starter-eureka</artifactId>-->
-<!--</dependency>-->
-
-<!--<dependency>-->
-    <!--<groupId>org.springframework.cloud</groupId>-->
-    <!--<artifactId>spring-cloud-starter-eureka-server</artifactId>-->
-<!--</dependency>-->
-```
-
-- 增加CSE服务注册和发现依赖
-
-```xml
-<dependency>
-	<groupId>com.huawei.paas.cse</groupId>
-	<artifactId>cse-solution-spring-cloud</artifactId>
-	<version>2.3.19</version>
-</dependency>
-```
-
-### 2.自定义RibbonClient
-采用CSE服务实例清单的维护机制，需要替代Ribbon默认的负载均衡策略，可以通过application配置文件来自定义RibbonClient。
-
-application.yml：
-
-```yml
-helloprovider:
-  ribbon:
-    NIWSServerListClassName: org.apache.servicecomb.springboot.starter.discovery.ServiceCombServerList
-```
-
-application.properties：
-
-```property
-helloprovider.ribbon.NIWSServerListClassName=org.apache.servicecomb.springboot.starter.discovery.ServiceCombServerList
-```
-其中：
-
-* helloprovider.ribbon.NIWSServerListClassName: RibbonClient的配置规则，<Provider服务名>.ribbon.<类型>
-* org.apache.servicecomb.springboot.starter.discovery.ServiceCombServerList: CSE服务实例清单的维护机制
-
-### 3.启动服务
+### 启动服务
 直接运行ClientMain的main函数
 
 访问[http://localhost:7211/hello?name=springcloud](http://localhost:7211/hello?name=springcloud)，调用helloconsumer服务/hello接口(消费helloprovider)
 
 
-### 附1.本地调试
+### 本地调试
 本地运行需要在src/main/resources下的application文件中增加如下配置：
 
 application.yml：
@@ -85,7 +38,7 @@ cse.credentials.project=cn-north-1
 * cse.credentials.akskCustomCipher: AKSK存储方式，默认default为明文存储，查看[更多](https://support.huaweicloud.com/devg-cse/cse_03_0088.html)
 * cse.credentials.project：注册Region，默认为华北区cn-north-1
 
-### 附2.镜像构建
+### 镜像构建
 a. 已提供Dockerfile和start.sh，可以直接在华为云微服务云平台[创建构建Job](https://servicestage.huaweicloud.com/servicestage/?project=cn-north-1#/pipeline/createjob)和[流水线](https://servicestage.huaweicloud.com/servicestage/?project=cn-north-1#/pipeline/create?from=pipeline.list)
 
 b. 华为云微服务平台编译时默认使用自带的maven仓库，若使用自定义的maven仓库，可参考以下两种方法： 1、请将您的settings.xml存放到该项目的代码库根目录下； 2、在该项目的pom文件中设置用户repositories配置。
