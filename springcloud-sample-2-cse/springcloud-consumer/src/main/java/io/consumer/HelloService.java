@@ -17,6 +17,7 @@ package io.consumer;
 
 import javax.ws.rs.core.MediaType;
 
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,11 +26,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(path = "/hello", produces = MediaType.TEXT_PLAIN)
 public class HelloService {
+  private static org.slf4j.Logger log = LoggerFactory.getLogger(HelloService.class);
+
   @Autowired
   Hello client;
 
   @RequestMapping(method = RequestMethod.GET)
   public String hello(String name) {
+    log.info("Access /hello, and name is " + name);
     return client.sayHi(name);
   }
 
