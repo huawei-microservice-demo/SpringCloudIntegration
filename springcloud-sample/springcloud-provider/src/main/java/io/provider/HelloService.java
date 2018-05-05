@@ -30,7 +30,7 @@ public class HelloService implements Hello {
 
   @Override
   @RequestMapping(path = "/sayhi", method = RequestMethod.GET)
-  public String sayHi(@RequestParam(name = "name") String name) {
+  public String sayHi(@RequestParam(name = "name", required = false) String name) {
     return "from provider: Hello " + name;
   }
 }
