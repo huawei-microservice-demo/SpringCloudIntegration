@@ -1,0 +1,12 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: spring-cloud-demo
+### CSE configurations #########
+cse:
+  credentials:
+    accessKey: your access key
+    secretKey: your secret key
+    akskCustomCipher: default
+### END OF CSE configurations #########

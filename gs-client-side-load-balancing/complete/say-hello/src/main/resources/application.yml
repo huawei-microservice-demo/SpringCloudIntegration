@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: say-hello
+
+server:
+  port: 8090
+### CSE configurations #########
+cse:
+  credentials:
+    accessKey: your access key
+    secretKey: your secret key
+    akskCustomCipher: default
+### END OF CSE configurations #########

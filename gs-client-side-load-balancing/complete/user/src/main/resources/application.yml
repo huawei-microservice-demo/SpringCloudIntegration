@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: user
+
+server:
+  port: 8888
+
+say-hello:
+  ribbon:
+    eureka:
+      enabled: true
+#    listOfServers: localhost:8090,localhost:9092,localhost:9999
+    ServerListRefreshInterval: 15000
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka
+zuul:
+  routes:
+    api:
+      serviceId: say-hello
+### CSE configurations #########
+cse:
+  credentials:
+    accessKey: your access key
+    secretKey: your secret key
+    akskCustomCipher: default
+### END OF CSE configurations #########

@@ -1,0 +1,55 @@
+cse-config-order: 100
+
+APPLICATION_ID: spring-boot
+service_description:
+  name: spring-boot-simple
+  version: 0.0.1
+
+cse:
+
+# for local test
+  service:
+    registry:
+      address: https://cse.cn-north-1.myhwclouds.com:443
+      instance:
+        watch: false
+        healthCheck:
+          interval: 5
+
+# for cloud service
+#  config:
+#    client:
+#      refreshMode: 1
+#  service:
+#    registry:
+#      address: https://cse.cn-north-1.myhwclouds.com:443
+#      instance:
+#        watch: false
+  config:
+    client:
+      serverUri: https://cse.cn-north-1.myhwclouds.com:443
+      refreshMode: 1
+      refresh_interval: 15000
+#  monitor:
+#    client:
+#      serverUri: https://cse.cn-north-1.myhwclouds.com:443
+#  credentials:
+#    accessKey: your access key
+#    secretKey: your secret key
+#    akskCustomCipher: default
+
+  rest:
+    address: 0.0.0.0:8080
+
+  credentials:
+    accessKey: your access key
+    secretKey: your secret key
+    akskCustomCipher: default
+
+servicecomb:
+  rest:
+    servlet:
+      urlPattern: /servicecomb/rest/*
+
+server:
+  port: 9999
