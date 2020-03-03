@@ -1,1 +1,9 @@
-这个项目主要包含了和其他开发框架的集成与改造，详细介绍可以参考[CSE开发指南](https://java.huaweicse.com/)和每个子项目下面的README.md介绍。
+THIS IS UNMAINTAINED
+As Eureka is no longer MAINTAINED, we decide to develop a new solution https://github.com/huaweicloud/spring-cloud-huawei to bring more valuable feature for users of servicecomb and huawei cloud.
+
+Moving forward I would suggest you use spring cloud huawei for those reasons:
+
+service mesh solution
+high perfomance API gateway
+route management, canary release
+work both on cloud and on-premise platform(compatible with both huawei cloud and ServiceComb)
